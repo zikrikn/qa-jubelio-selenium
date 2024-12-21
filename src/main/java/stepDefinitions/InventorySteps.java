@@ -5,8 +5,13 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.openqa.selenium.bidi.log.Log;
 import pages.InventoryPage;
 import pages.LoginPage;
+import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import java.time.Duration; // Import Duration class
 
 public class InventorySteps extends env_target {
     private InventoryPage inventoryPage;
@@ -16,9 +21,13 @@ public class InventorySteps extends env_target {
         setUp();
         driver.get(baseUrl + "login");
         LoginPage loginPage = new LoginPage(driver);
-        loginPage.enterEmail("zikrikholifah898@gmail.com");
-        loginPage.enterPassword("Aiki@12345");
+        loginPage.enterEmail("sasukeemail0@gmail.com");
+        loginPage.enterPassword("A@12345678a");
         loginPage.clickLoginButton();
+
+        // Wait for the URL to change to the desired one after login
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+        wait.until(ExpectedConditions.urlToBe(baseUrl + "home/getting-started"));
     }
 
     @When("user navigates to the inventory page")

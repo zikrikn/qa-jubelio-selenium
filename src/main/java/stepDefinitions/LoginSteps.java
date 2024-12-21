@@ -18,8 +18,8 @@ public class LoginSteps extends env_target {
 
     @When("user enters valid email and password")
     public void user_enters_valid_email_and_password() {
-        loginPage.enterEmail("zikrikholifah898@gmail.com");
-        loginPage.enterPassword("Aiki@12345");
+        loginPage.enterEmail("sasukeemail0@gmail.com");
+        loginPage.enterPassword("A@12345678a");
     }
 
     @When("user clicks the login button")
