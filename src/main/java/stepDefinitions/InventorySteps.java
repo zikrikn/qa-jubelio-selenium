@@ -5,13 +5,11 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.openqa.selenium.bidi.log.Log;
 import pages.InventoryPage;
 import pages.LoginPage;
-import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import java.time.Duration; // Import Duration class
+import java.time.Duration;
 
 public class InventorySteps extends env_target {
     private InventoryPage inventoryPage;
