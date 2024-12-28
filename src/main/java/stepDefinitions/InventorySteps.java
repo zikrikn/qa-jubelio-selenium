@@ -19,7 +19,7 @@ public class InventorySteps extends env_target {
         setUp();
         driver.get(baseUrl + "login");
         LoginPage loginPage = new LoginPage(driver);
-        loginPage.enterEmail("sasukeemail0@gmail.com");
+        loginPage.enterEmail("nunuisthere898@gmail.com");
         loginPage.enterPassword("A@12345678a");
         loginPage.clickLoginButton();
 
@@ -30,7 +30,14 @@ public class InventorySteps extends env_target {
 
     @When("user navigates to the inventory page")
     public void user_navigates_to_the_inventory_page() {
+        // Navigate to the inventory page
         driver.get(baseUrl + "home/inventory");
+
+        // Wait for the inventory page to load
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(120));
+        wait.until(ExpectedConditions.urlToBe(baseUrl + "home/inventory"));
+
+        // Initialize the InventoryPage object
         inventoryPage = new InventoryPage(driver);
     }
 
